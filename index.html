@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD NOORALAM | প্রোফেশনাল পোর্টফোলিও</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Hind Siliguri', 'sans-serif'] },
+                    colors: {
+                        primary: '#0ea5e9', 
+                        secondary: '#6366f1',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .chart-container {
+            position: relative; width: 100%; max-width: 600px; margin: auto; height: 300px;
+        }
+        #particles-js {
+            position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(14, 165, 233, 0.4);
+            transform: translateY(-5px);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+        }
+        .profile-img-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+        }
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(to bottom right, #0ea5e9, #6366f1);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased overflow-x-hidden">
+
+    <div id="particles-js"></div>
+
+    <div class="flex flex-col md:flex-row min-h-screen relative z-10">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 w-72 bg-dark/80 backdrop-blur-xl border-r border-white/5 z-50 transition-transform duration-500 ease-in-out flex flex-col h-screen">
+            <div class="p-8">
+                <div class="text-2xl font-extrabold tracking-tighter text-white neon-text mb-10">
+                    নূর<span class="text-primary">আলম।</span>
+                </div>
+                
+                <div class="flex flex-col items-center mb-10 text-center">
+                    <div class="profile-img-container">
+                        <img src="photo.png" alt="MD NOORALAM" class="w-full h-full object-cover rounded-full border-4 border-dark">
+                    </div>
+                    <h2 class="text-lg font-bold text-white tracking-wider">মোঃ নূরআলম</h2>
+                    <p class="text-[10px] text-primary font-bold tracking-[0.2em] mt-2 uppercase">ইঞ্জিনিয়ার ও ডেভেলপার</p>
+                </div>
+
+                <nav class="space-y-2">
+                    <a href="#overview" class="flex items-center px-4 py-3 rounded-xl hover:bg-white/5 transition-all group">
+                        <i class="fas fa-home w-8 text-slate-500 group-hover:text-primary"></i>
+                        <span class="text-sm font-semibold">একনজরে</span>
+                    </a>
+                    <a href="#skills" class="flex items-center px-4 py-3 rounded-xl hover:bg-white/5 transition-all group">
+                        <i class="fas fa-brain w-8 text-slate-500 group-hover:text-primary"></i>
+                        <span class="text-sm font-semibold">দক্ষতা বিশ্লেষণ</span>
+                    </a>
+                    <a href="#experience" class="flex items-center px-4 py-3 rounded-xl hover:bg-white/5 transition-all group">
+                        <i class="fas fa-history w-8 text-slate-500 group-hover:text-primary"></i>
+                        <span class="text-sm font-semibold">অভিজ্ঞতা</span>
+                    </a>
+                    <a href="#projects" class="flex items-center px-4 py-3 rounded-xl hover:bg-white/5 transition-all group">
+                        <i class="fas fa-project-diagram w-8 text-slate-500 group-hover:text-primary"></i>
+                        <span class="text-sm font-semibold">প্রজেক্টসমূহ</span>
+                    </a>
+                    <a href="#contact" class="flex items-center px-4 py-3 rounded-xl hover:bg-white/5 transition-all group">
+                        <i class="fas fa-envelope w-8 text-slate-500 group-hover:text-primary"></i>
+                        <span class="text-sm font-semibold">যোগাযোগ</span>
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="mt-auto p-8 flex justify-between border-t border-white/5">
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="md:hidden flex justify-between items-center p-6 bg-dark/50 sticky top-0 backdrop-blur-md z-40 border-b border-white/5">
+                <span class="font-bold text-white tracking-widest text-primary">নূরআলম</span>
+                <button id="menu-toggle" class="text-primary"><i class="fas fa-bars-staggered text-2xl"></i></button>
+            </div>
+
+            <div class="max-w-6xl mx-auto p-6 md:p-12 space-y-24">
+
+                <!-- Introduction -->
+                <section id="overview" class="relative pt-10 md:pt-20">
+                    <div class="max-w-3xl space-y-6">
+                        <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase">পরিচিতি</span>
+                        <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.2]">
+                            ভবিষ্যতের প্রযুক্তি <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">নির্মাণ করছি।</span>
+                        </h1>
+                        <p class="text-lg text-slate-400 leading-relaxed max-w-xl">
+                            আমি **মেকানিক্যাল সুপারভিশন** এর নির্ভুলতা এবং **ফুল-স্ট্যাক ডেভেলপমেন্ট** এর সৃজনশীলতার এক সংমিশ্রণ। আধুনিক ডিজিটাল এবং ইন্ডাস্ট্রিয়াল ইনফ্রাস্ট্রাকচার তৈরিতে আমি নিবেদিত।
+                        </p>
+                        <div class="pt-6 flex flex-wrap gap-4">
+                            <a href="#projects" class="px-8 py-4 bg-primary text-dark font-bold rounded-2xl hover:bg-white transition-all">কাজগুলো দেখুন</a>
+                            <a href="#contact" class="px-8 py-4 glass-card text-white font-bold rounded-2xl hover:border-primary transition-all">যোগাযোগ করুন</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skill Analysis -->
+                <section id="skills">
+                    <h2 class="text-2xl font-bold text-white mb-10 flex items-center">
+                        <span class="w-10 h-1 bg-primary mr-4"></span> দক্ষতা বিশ্লেষণ
+                    </h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="glass-card rounded-3xl p-8 text-center">
+                            <h3 class="text-sm font-bold text-slate-500 mb-6 uppercase tracking-widest">বহুমুখী দক্ষতার ভারসাম্য</h3>
+                            <div class="chart-container"><canvas id="radarChart"></canvas></div>
+                        </div>
+                        <div class="glass-card rounded-3xl p-8 text-center">
+                            <h3 class="text-sm font-bold text-slate-500 mb-6 uppercase tracking-widest">টেকনিক্যাল প্রফিসিয়েন্সি</h3>
+                            <div class="chart-container"><canvas id="barChart"></canvas></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section id="experience">
+                    <h2 class="text-2xl font-bold text-white mb-10 flex items-center">
+                        <span class="w-10 h-1 bg-secondary mr-4"></span> কর্মজীবন ও অভিজ্ঞতা
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/4">
+                                <span class="text-primary font-bold text-xl">২০২০ - বর্তমান</span>
+                                <p class="text-xs text-slate-500 uppercase mt-1">ফুল-টাইম রোল</p>
+                            </div>
+                            <div class="flex-1 space-y-3">
+                                <h3 class="text-xl font-bold text-white">মেকানিক্যাল সুপারভাইজার</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">ইন্ডাস্ট্রিয়াল প্রজেক্ট পরিচালনা, নিরাপত্তা নিশ্চিতকরণ এবং টেকনিক্যাল টিম ম্যানেজমেন্টে আমি অভিজ্ঞ।</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-6 border-l-4 border-secondary">
+                            <div class="md:w-1/4">
+                                <span class="text-secondary font-bold text-xl">বর্তমানে</span>
+                                <p class="text-xs text-slate-500 uppercase mt-1">ফ্রিল্যান্সিং</p>
+                            </div>
+                            <div class="flex-1 space-y-3">
+                                <h3 class="text-xl font-bold text-white">ফ্রন্টএন্ড ওয়েব আর্কিটেক্ট</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">আধুনিক UI/UX এবং রেসপন্সিভ ডিজাইনের মাধ্যমে হাই-স্পিড ওয়েব অ্যাপ্লিকেশন তৈরি করি।</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section id="contact" class="max-w-4xl mx-auto pb-20">
+                    <div class="glass-card rounded-3xl p-8 md:p-12 border-t-2 border-primary">
+                        <div class="text-center mb-10">
+                            <h2 class="text-3xl font-bold text-white">যোগাযোগ করুন</h2>
+                            <p class="text-slate-500 mt-2">আপনার কোনো প্রজেক্ট বা জিজ্ঞাসা থাকলে নিচে মেসেজ দিন।</p>
+                        </div>
+                        <form action="#" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" placeholder="আপনার নাম" class="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-primary outline-none transition-all text-white">
+                                <input type="email" placeholder="ইমেইল এড্রেস" class="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-primary outline-none transition-all text-white">
+                            </div>
+                            <textarea rows="4" placeholder="আপনার বার্তা..." class="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-primary outline-none transition-all text-white"></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="px-10 py-4 bg-primary text-dark font-bold rounded-xl hover:scale-105 transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)]">মেসেজ পাঠান</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <footer class="text-center py-10 border-t border-white/5">
+                    <p class="text-slate-500 text-[10px] tracking-widest font-bold uppercase">ডিজাইন ও ডেভেলপমেন্ট: মোঃ নূরআলম &copy; ২০২৬</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#0ea5e9" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.4, "random": true },
+                    "size": { "value": 2, "random": true },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#6366f1",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": { "enable": true, "speed": 1.5, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+                }
+            });
+
+            // Charts
+            const chartOptions = {
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    r: { 
+                        angleLines: { color: 'rgba(255,255,255,0.05)' },
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        pointLabels: { color: '#64748b', font: { family: 'Hind Siliguri', weight: 'bold' } },
+                        ticks: { display: false }
+                    },
+                    x: { grid: { display: false }, ticks: { color: '#64748b', font: { family: 'Hind Siliguri' } } },
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b', font: { family: 'Hind Siliguri' } } }
+                }
+            };
+
+            new Chart(document.getElementById('radarChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['কোডিং', 'মেইনটেন্যান্স', 'ডিজাইন', 'নিরাপত্তা', 'টিম লিড', 'স্ট্র্যাটেজি'],
+                    datasets: [{
+                        data: [85, 95, 80, 100, 90, 85],
+                        backgroundColor: 'rgba(14, 165, 233, 0.2)',
+                        borderColor: '#0ea5e9',
+                        borderWidth: 2
+                    }]
+                },
+                options: chartOptions
+            });
+
+            new Chart(document.getElementById('barChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['HTML/CSS', 'JavaScript', 'React', 'Tailwind', 'Git'],
+                    datasets: [{
+                        data: [98, 85, 75, 90, 80],
+                        backgroundColor: '#6366f1',
+                        borderRadius: 8
+                    }]
+                },
+                options: chartOptions
+            });
+        });
+
+        const sidebar = document.getElementById('sidebar');
+        const menuToggle = document.getElementById('menu-toggle');
+        menuToggle.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
+    </script>
+</body>
+</html>
